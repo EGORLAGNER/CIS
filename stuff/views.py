@@ -17,6 +17,11 @@ class AllWorkers(View):
     """Показывает всех работников"""
 
     def get(self, request):
-        all_workers = Worker.objects.all()
-        context = {'workers': all_workers}
+        search_query = request.GET.get('search', '')
+        if search_query:
+            workers = Worker.objects.filter(last_name__icontains=search_query)
+        else:
+            workers = Worker.objects.all()
+        context = {'workers': workers}
+
         return render(request, 'stuff/all_workers.html', context)
