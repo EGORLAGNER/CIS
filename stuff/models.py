@@ -20,3 +20,6 @@ class Worker(models.Model):
 
     def __str__(self):
         return f"({self.last_name.title()} {self.first_name.title()})"
+
+    class Meta:
+        ordering = ['last_name']

@@ -1,12 +1,14 @@
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import render
 from django.views.generic import View
 
 from stuff.models import *
 
 
-def index(request):
-    """Заглавная страница приложения. Отображает название приложения"""
-    return HttpResponse('This my CIS - "Corporate Information System"')
+class Index(View):
+    """Заглавная страница приложения"""
+
+    def get(self, request):
+        return render(request, 'base.html')
 
 
 class AllWorkers(View):

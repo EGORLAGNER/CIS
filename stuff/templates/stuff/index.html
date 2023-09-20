@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>index page</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h5>Список всех сотрудников:</h5>
     {% for worker in workers %}
         <p>
-            {{ worker.first_name }} {{ worker.last_name }} {{ worker.middle_name }}
+            {{ worker.last_name }} {{ worker.first_name }} {{ worker.middle_name }}
         </p>
     {% endfor %}
+{% endblock %}
 
-</body>
-</html>
+
