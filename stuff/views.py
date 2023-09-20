@@ -17,4 +17,4 @@ class AllWorkers(View):
     def get(self, request):
         all_workers = Worker.objects.all()
         context = {'workers': all_workers}
-        return render(request, 'stuff/index.html', context)
+        return render(request, 'stuff/all_workers.html', context)
