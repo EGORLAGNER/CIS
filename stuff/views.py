@@ -8,7 +8,7 @@ class Index(View):
     """Заглавная страница приложения"""
 
     def get(self, request):
-        return render(request, 'base.html')
+        return render(request, 'stuff/main_page.html')
 
 
 class AllWorkers(View):
