@@ -8,7 +8,9 @@ class Index(View):
     """Заглавная страница приложения"""
 
     def get(self, request):
-        return render(request, 'stuff/main_page.html')
+        text = 'This my CIS - "Corporate Information System"'
+        context = {'context': text}
+        return render(request, 'stuff/main_page.html', context)
 
 
 class AllWorkers(View):
