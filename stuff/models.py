@@ -47,3 +47,6 @@ class Device(models.Model):
         blank=True,
         related_name='worker'
     )
+
+    def __str__(self):
+        return self.name
