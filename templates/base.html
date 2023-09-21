@@ -26,6 +26,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'all_workers_url' %}">workers</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'admin:login' %}">admin</a>
+                </li>
             </ul>
             <form class="d-flex" role="search" action="{% url 'all_workers_url' %}">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
