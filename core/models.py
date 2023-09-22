@@ -40,12 +40,12 @@ class Device(models.Model):
     serial_number = models.CharField(max_length=255)
     special_device = models.BooleanField(default=False)
     inventory_number = models.PositiveBigIntegerField()
-    registered_to = models.ForeignKey(
+    device = models.ForeignKey(
         'Employee',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name='worker'
+        related_name='employee'
     )
 
     def __str__(self):
