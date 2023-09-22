@@ -9,7 +9,7 @@ class Department(models.Model):
         return self.location
 
 
-class Worker(models.Model):
+class Employee(models.Model):
     """Модель трудоустроенного сотрудника"""
 
     last_name = models.CharField(max_length=255)
@@ -20,7 +20,7 @@ class Worker(models.Model):
 
     """Отношения между моделями"""
     department = models.ForeignKey(
-        Department,  # главная модель с которой строятся отношения One to Many
+        'Department',  # главная модель с которой строятся отношения One to Many
         on_delete=models.SET_NULL,  # обязательный аргумент, поведение при удалении связанного экземпляра
         null=True,  # разрешает оставлять пустое поле в базе данных
         blank=True,  # разрешает оставлять пустое поле при заполнении форм (не имеет отношения к базе данных)
@@ -41,7 +41,7 @@ class Device(models.Model):
     special_device = models.BooleanField(default=False)
     inventory_number = models.PositiveBigIntegerField()
     registered_to = models.ForeignKey(
-        Worker,
+        'Employee',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
