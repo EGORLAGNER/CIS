@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
 
-from stuff.models import *
+from core.models import *
 
 
 class Index(View):
@@ -19,9 +19,9 @@ class AllWorkers(View):
     def get(self, request):
         search_query = request.GET.get('search', '')
         if search_query:
-            workers = Worker.objects.filter(last_name__icontains=search_query)
+            workers = Employee.objects.filter(last_name__icontains=search_query)
         else:
-            workers = Worker.objects.all()
+            workers = Employee.objects.all()
         context = {'workers': workers}
 
         return render(request, 'stuff/all_workers.html', context)
