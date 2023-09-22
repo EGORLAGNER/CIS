@@ -15,6 +15,9 @@ class Employee(models.Model):
     last_name = models.CharField(max_length=255)
     first_name = models.CharField(max_length=255)
     middle_name = models.CharField(max_length=255)
+
+    employee_number = models.BigIntegerField(unique=True, default=None)
+
     # email = models.EmailField()
     # phone = models.CharField(max_length=20)
 
